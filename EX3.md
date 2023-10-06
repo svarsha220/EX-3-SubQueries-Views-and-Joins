@@ -105,44 +105,44 @@ insert into dept (deptno,deptname,loc) values (8,'manufacture','france');
 
 ## Create a Customer1 Table
 ```
-CREATE TABLE Customer1 (customer_id INT,cust_name VARCHAR(20),city VARCHAR(20),grade INT,salesman_id INT);
+ create table customer1(cusid int(8),cusname char(20),city char(92),grade int(5),salesid int(27));
 ```
 ## Inserting Values to the Table
 ```
-sql
-INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3002, 'Nick Rimando', 'New York', 100, 5001);
-INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3007, 'Brad Davis', 'New York', 200, 5001);
-INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3005, 'Graham Zusi', 'California', 200, 5002);
-INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3008, 'Julian Green', 'London', 300, 5002);
-INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3004, 'Fabian Johnson', 'Paris', 300, 5006);
-INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3009, 'Geoff Cameron', 'Berlin', 100, 5003);
-INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3003, 'Jozy Altidor', 'Moscow', 200, 5007);
-INSERT INTO Customer1 (customer_id, cust_name, city, grade, salesman_id) VALUES(3001, 'Brad Guzan', 'London', NULL, 5005);
+insert into customer1 (cusid,cusname,city,grade,salesid) values (100,'varsha','chennai',5,123);
+
+insert into customer1 (cusid,cusname,city,grade,sales) values (101,'swetha','kanchipuram',4,124);
+
+insert into customer1 (cusid,cusname,city,grade,salesid) values (102,'dhivya','chennai',3,124);
+
+insert into customer1 (cusid,cusname,city,grade,salesid) values (103,'vidhya','mumbai',2,125);
+
+insert into customer1 (cusid,cusname,city,grade,salesid) values (104,'yuva','hyd',1,126);
 ```
-## Create a Salesperson1 table
+## Create a Salesperson table
 ```
-sql
-CREATE TABLE Salesman1 (salesman_id INT,name VARCHAR(20),city VARCHAR(20),commission DECIMAL(4,2));
+create table salesperson (salesid int(2),city char(39),salesname char(20),commission int(5));
 ```
 ## Inserting Values to the Table
 ```
-sql
-INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5001, 'James Hoog', 'New York', 0.15);
-INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5002, 'Nail Knite', 'Paris', 0.13);
-INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5005, 'Pit Alex', 'London', 0.11);
-INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5006, 'Mc Lyon', 'Paris', 0.14);
-INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5007, 'Paul Adam', 'Rome', 0.13);
-INSERT INTO Salesman1 (salesman_id, name, city, commission) VALUES(5003, 'Lauson Hen', 'San Jose', 0.12);
+insert into salesperson(salesid,city,salesname,commission) values(1,'chennai','dhru',500);
+
+insert into salesperson(salesid,city,salesname,commission) values(2,'hyd','nive',200);
+
+insert into salesperson(salesid,city,salesname,commission) values(3,'mumbai','deepesh',400);
+
+insert into salesperson(salesid,city,salesname,commission) values(4,'kanchipuram','jeeva',100);
 ```
 ### Q7) Write a SQL query to find the salesperson and customer who reside in the same city. Return Salesman, cust_name and city.
 
 ### QUERY:
 ```
-SELECT salesman1.name AS "Salesman", customer1.cust_name AS "Customer Name", salesman1.city AS "City" from salesman1 INNER JOIN customer1 ON salesman1.city=customer1.city;
+select salesperson.salesname AS "Salesman", customer1.cusname as "Customer Name", salesperson.city AS "City" from salesperson inner join customer1 on salesperson.city=customer1.city;
 ```
 
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/03740d61-0447-4ca7-81bc-c0aa3bb12821)
+![dbms 3 7](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/02e6eae3-0ce4-4d00-a495-aff841f64255)
+
 
 
 ### Q8) Write a SQL query to find salespeople who received commissions of more than 13 percent from the company. Return Customer Name, customer city, Salesman, commission.
