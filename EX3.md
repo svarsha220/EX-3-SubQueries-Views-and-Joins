@@ -93,21 +93,18 @@ insert into dept (deptno,deptname,loc) values (8,'manufacture','france');
 ### OUTPUT:
 ![dbms 3 5](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/b49a209f-1db2-4373-b6ee-5c3804e21622)
 
-### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
+### Q6) Update the table emp by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
 ### QUERY:
 ```
-update EMP set SAL=SAL*1.1 WHERE JOB='clerk';
-
-create view empv8 as select EMPNO,ENAME,SAL,JOB from EMP;
+ update emp set sal=sal*1.1 where job='clerk';
 ```
 
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/e4634001-c8dc-43eb-861c-b795928fde2e)
+![dbms 3 6](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/b9b10066-2ed8-43d0-8a84-9c398a04e3c5)
 
 ## Create a Customer1 Table
 ```
-sql
 CREATE TABLE Customer1 (customer_id INT,cust_name VARCHAR(20),city VARCHAR(20),grade INT,salesman_id INT);
 ```
 ## Inserting Values to the Table
