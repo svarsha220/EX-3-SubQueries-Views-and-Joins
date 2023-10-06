@@ -3,127 +3,95 @@
 
 ## Create employee Table
 ```
-sql
-CREATE TABLE EMP (EMPNO NUMBER(4) PRIMARY KEY,ENAME VARCHAR2(10),JOB VARCHAR2(9),MGR NUMBER(4),HIREDATE DATE,SAL NUMBER(7,2),COMM NUMBER(7,2),DEPTNO NUMBER(2));
+ create table emp (empno int(5) primary key,name char(29),job char(24),sal int(5),deptno int(3));
+
 ```
 ## Insert the values
 ```
-sql
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7369, 'SMITH', 'CLERK', 7902, '17-DEC-80', 800, NULL, 20);
+insert into emp(empno,name,job,sal,deptno) values (1234,'varsha','manager',12345,12);
 
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7499, 'ALLEN', 'SALESMAN', 7698, '20-FEB-81', 1600, 300, 30);
+insert into emp(empno,name,job,sal,deptno) values (1235,'jeeva','clerk',1234,14);
 
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7521, 'WARD', 'SALESMAN', 7698, '22-FEB-81', 1250, 500, 30);
+insert into emp(empno,name,job,sal,deptno) values (1236,'thilaga','clerk',1235,14);
 
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7566, 'JONES', 'MANAGER', 7839, '02-APR-81', 2975, NULL, 20);
+insert into emp(empno,name,job,sal,deptno) values (1237,'swetha','manager',12315,12);
 
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7654, 'MARTIN', 'SALESMAN', 7698, '28-SEP-81', 1250, 1400, 30);
+insert into emp(empno,name,job,sal,deptno) values (1238,'yuva','salesman',1345,11);
 
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7698, 'BLAKE', 'MANAGER', 7839, '01-MAY-81', 2850, NULL, 30);
-
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7782, 'CLARK', 'MANAGER', 7839, '09-JUN-81', 2450, NULL, 10);
-
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7788, 'SCOTT', 'ANALYST', 7566, '19-APR-87', 3000, NULL, 20);
-
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7839, 'KING', 'PRESIDENT', NULL, '17-NOV-81', 5000, NULL, 10);
-
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7844, 'TURNER', 'SALESMAN', 7698, '08-SEP-81', 1500, 0, 30);
-
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7876, 'ADAMS', 'CLERK', 7788, '23-MAY-87', 1100, NULL, 20);
-
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7900, 'JAMES', 'CLERK', 7698, '03-DEC-81', 950, NULL, 30);
-
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7902, 'FORD', 'ANALYST', 7566, TO_DATE('03-DEC-81', 'DD-MON-RR'), 3000, 20, 20);
-
-INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO)
-VALUES (7934, 'MILLER', 'CLERK', 7782, TO_DATE('23-JAN-82', 'DD-MON-RR'), 1300, 10, 10);
+insert into emp(empno,name,job,sal,deptno) values (1239,'vidhya','accountant',2345,2);
 ```
 
 ## Create department table
 ```
-sql
-CREATE TABLE DEPT (DEPTNO NUMBER(2) PRIMARY KEY,DNAME VARCHAR2(14),LOC VARCHAR2(13));
+create table dept(deptno int(5) primary key,deptname char(30),loc char(40));
 ```
 ## Insert the values in the department table
 ```
-sql
-INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (10, 'ACCOUNTING', 'NEW YORK');
+insert into dept (deptno,deptname,loc) values (2,'accounting','delhi');
 
-INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (20, 'RESEARCH', 'DALLAS');
+insert into dept (deptno,deptname,loc) values (1,'research','pune');
 
-INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (30, 'SALES', 'CHICAGO');
+insert into dept (deptno,deptname,loc) values (4,'marketing','goa');
 
-INSERT INTO DEPT (DEPTNO, DNAME, LOC) VALUES (40, 'OPERATIONS', 'BOSTON');
+insert into dept (deptno,deptname,loc) values (8,'manufacture','france');
 ```
 
-### Q1) List the name of the employees whose salary is greater than that of employee with empno 7566.
+### Q1) List the name of the employees whose salary is greater than that of employee with empno 1239 .
 
 
 ### QUERY:
 ```
-CREATE VIEW details AS SELECT ENAME FROM EMP WHERE SAL >(select SAL from EMP where EMPNO=7566);
+ select name from emp where sal >(select sal from emp where empno=1239);
 ```
 
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/f23645af-4103-4114-9a7f-dd4a70e1aaee)
-
+![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/82834903-eaca-4221-b51f-9c56a6f09c3b)
 
 ### Q2) List the ename,job,sal of the employee who get minimum salary in the company.
 
 ### QUERY:
 ```
-CREATE VIEW minimum AS select ENAME,JOB,SAL from EMP where SAL =(select MIN(SAL) from EMP);
+ create view minimum as select name,job,sal from emp where sal =(select min(sal) from emp);
 ```
 
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/e61b9275-0e14-4c49-8457-316995b44d12)
+![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/5bbeec1b-5a39-4260-8675-fd1553f42bc6)
 
 
 ### Q3) List ename, job of the employees who work in deptno 10 and his/her job is any one of the job in the department ‘SALES’.
 
 ### QUERY:
 ```
-select ENAME,JOB from EMP where  DEPTNO=10 AND JOB='SALESMAN';
+ select name,job from emp where  deptno=10 and job='salesman';
 ```
 
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/63c66ac3-f359-4223-a277-41996c1e052a)
+![dbms 3 3](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/a35e4417-9819-4f13-aa33-c4b360e5691d)
 
 
 
-### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 10.
+
+### Q4) Create a view empv5 (for the table emp) that contains empno, ename, job of the employees who work in dept 12.
 
 ### QUERY:
 ```
-create view empv5 as select EMPNO,ENAME,JOB from EMP where DEPTNO=10;
+ create view empv5 as select empno,name,job from emp where deptno=12;
 ```
 
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/fe0e9855-4833-4978-bd42-982f8847d260)
+![dbms 3 4](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/6c49bea5-40ec-430e-b860-3b03686e1796)
 
 
-### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 30. Also display the contents of the view.
+
+### Q5) Create a view with column aliases empv30 that contains empno, ename, sal of the employees who work in dept 11. Also display the contents of the view.
 
 ### QUERY:
 ```
-create view empv30 AS select EMPNO,ENAME,SAL from EMP where DEPTNO=30;
+ create view empv30 as select empno,name,sal from emp where deptno=11;
 ```
 
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/0df58ab8-2b5b-4cb7-b0d5-54d92c27511c)
+![dbms 3 5](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/b49a209f-1db2-4373-b6ee-5c3804e21622)
 
 ### Q6) Update the view empv5 by increasing 10% salary of the employees who work as ‘CLERK’. Also confirm the modifications in emp table
 
