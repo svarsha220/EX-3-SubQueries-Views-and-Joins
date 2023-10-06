@@ -162,31 +162,32 @@ select customer1.cusname as "Customer Name",customer1.city as "Customer City",sa
 
 ### QUERY:
 ```
-SELECT customer1.cust_name AS "Customer Name",customer1.city AS "Customer City",salesman1.name AS "Salesman",salesman1.commission AS "Commission" FROM salesman1 INNER JOIN customer1 ON salesman1.salesman_id=customer1.salesman_id WHERE salesman1.commission>0.13;
+ select * from customer1 natural join salesperson;
 ```
 
 
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/60e52b70-c6e6-457b-a473-11314fc3790a)
+![dbms 3 9](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/1d738da4-88cd-41f8-aa05-f16dea875bc7)
+
 
 ### Q10) Perform Left and right join on both tables
 
 ### QUERY FOR LEFT JOIN:
 ```
-SELECT customer1.cust_name AS "Customer Name",customer1.city AS "Customer City",salesman1.name AS "Salesman",salesman1.commissioSELECT customer1.cust_name AS "Customer Name",customer1.city AS "Customer City",salesman1.name AS "Salesman",salesman1.commission AS "Commission" FROM salesman1 INNER JOIN customer1 ON salesman1.salesman_id=customer1.salesman_id WHERE salesman1.commission>0.13;
-```
-```
-select * from customer1 natural join salesman1;
+ select * from salesperson left join customer1 on salesperson.city=customer1.city;
 ```
 
+
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/9b763855-6a09-48b4-baad-c0c52e98e88a)
+
+![dbms 3 10 2](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/0170fb37-1348-4873-b643-a8ff85afb701)
+
 
 ### QUERY FOR RIGHT JOIN:
 ```
-SELECT * FROM salesman1 RIGHT JOIN customer1 ON salesman1.salesman_id=customer1.salesman_id;
+select * from salesperson RIGHT JOIN customer1 on salesperson.city=customer1.city;
 ```
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/57f50dad-874b-436f-80c9-062a0e420eb1)
+![dbms 3 10 1](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/63ac6017-3d11-4ef4-829d-0d0f704cb5f0)
 
 
