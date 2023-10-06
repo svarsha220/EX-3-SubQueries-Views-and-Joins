@@ -145,16 +145,17 @@ select salesperson.salesname AS "Salesman", customer1.cusname as "Customer Name"
 
 
 
-### Q8) Write a SQL query to find salespeople who received commissions of more than 13 percent from the company. Return Customer Name, customer city, Salesman, commission.
+### Q8) Write a SQL query to find salespeople who received commissions of more than 100. Return Customer Name, customer city, Salesman, commission.
 
 
 ### QUERY:
 ```
-SELECT customer1.cust_name AS "Customer Name",customer1.city AS "Customer City",salesman1.name AS "Salesman",salesman1.commission AS "Commission" FROM salesman1 INNER JOIN customer1 ON salesman1.salesman_id=customer1.salesman_id WHERE salesman1.commission>0.13;
+select customer1.cusname as "Customer Name",customer1.city as "Customer City",salesperson.salesname AS "Salesman",salesperson.commission as "Commission" from salesperson inner join customer1 on salesperson.salesid=customer1.salesid where salesperson.commission>100;
 ```
 
 ### OUTPUT:
-![image](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/4cee81a9-3ba0-48b5-8711-b886db08594b)
+
+![dbms 3 8](https://github.com/svarsha220/EX-3-SubQueries-Views-and-Joins/assets/127709117/68e4224a-ebcf-44aa-986b-3da6fb22eca8)
 
 
 ### Q9) Perform Natural join on both tables
